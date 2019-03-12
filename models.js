@@ -9,6 +9,11 @@ const sequelize = new Sequelize({
   }
 });
 
+const User = sequelize.define('user', {
+  email: Sequelize.STRING,
+  password_digest: Sequelize.STRING,
+});
+
 const Kitten = sequelize.define('kitten', {
   name: Sequelize.STRING,
   age: Sequelize.INTEGER,
@@ -25,4 +30,5 @@ module.exports = {
   sequelize,
   Doggo,
   Kitten,
+  User,
 };
